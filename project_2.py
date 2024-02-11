@@ -29,5 +29,6 @@ param = grid.best_params_['n_neighbors']
 
 #Finally, perform the model using the best k neighbors parameter
 model = KNeighborsClassifier(n_neighbors = param)
+model.fit(x_train, y_train)
 scores = cross_val_score(model, x_test, y_test, cv=folds, scoring = 'accuracy')
 print(scores)
